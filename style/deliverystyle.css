@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+*{
+    font-family: 'Nunito', sans-serif;
+}
+body {
+    background: #fdd08b;
+    /**background-image: url("foto/Background/test\ bg.jpg"); OR color #ff9900 **/
+    background-position: center;
+    background-size: auto;
+    margin: 0;
+}
+
+/*navigacijas style start*/
+.navmenu {
+    margin-top: 0;
+    background-color: #0f1c3b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navigation {
+    position: static;
+    text-decoration: none;
+    color : #ffffff; /*#2e2a26*/
+    cursor: pointer;
+    margin-right: 50px;
+    justify-content: space-between;
+}
+
+.navigation:hover {
+    transition: 0.3s;
+    color: #ffa723fa;
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+
+.flex-container space-between {
+    justify-content: space-between;
+}
+
+.flex-item {
+    padding: 5px;
+    width: 60px;
+    height: 50px;
+    margin: 5px;
+    line-height: 50px;
+    text-align: center;
+}
+/*Navigacijas style end*/
+
+
+.delivery-container {
+    margin-top: 60px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+h2, h3, h5 {
+    font-weight: 100;
+}
+
+.delivery-content {
+    background-color: #0f1c3b;
+    padding-top: 30px;
+    padding-left: 60px;
+    padding-bottom: 60px;
+    padding-right: 60px;
+    width: max-content;
+    height: auto;
+    border: 1px solid #0f1c3b;
+    border-radius: 20px;
+}
+
+.delivery-content > h3 {
+    margin-top: 30px;
+}
+
+.user-cart {
+    text-decoration: none;
+    color: #fdd08b;
+}
+
+.user-cart:hover {
+    text-decoration: underline;
+    color: #ffa723fa;
+    transition: 0.4s;
+}
+
+.delivery-partner {
+    justify-content: start;
+}
+
+.delivery-table {
+    border: 2px solid #ffa723fa;
+}
+
+.table-row {
+    background-color: transparent;
+    padding: 20px;
+}
+
+.table-column {
+    padding: 10px;
+    border: 1px solid #ffa723fa;
+}

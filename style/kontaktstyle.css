@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #fdd08b;
+    background-image: url('/foto/Background/Background.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0;
+}
+
+.container {
+    justify-content: center;
+}
+
+/* HEADER STYLE START */
+.navmenu {
+    margin-top: 0;
+    background-color: #0f1c3b; /*#0f1c3b.#3F3D56*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation {
+    position: static;
+    text-decoration: none;
+    color : #ffffff; /*#2e2a26*/
+    cursor: pointer;
+}
+
+.navigation:hover {
+    transition: 0.3s;
+    color: #ffa723fa;
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+
+.flex-container space-between {
+    justify-content: space-between;
+}
+
+.flex-item {
+    padding: 5px;
+    width: 60px;
+    height: 50px;
+    margin: 5px;
+    line-height: 50px;
+    text-align: center;
+}
+
+/* HEADER STYLE END */
+
+.title {
+    margin-top: 30px;
+    font-size: 35px;
+    text-align: center;
+
+}
+
+.contact {
+    margin-top: 30px;
+    justify-content: center;
+    display: flex;
+}
+
+.divcontact {
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-left: 1px solid black;
+}
+
+.divcontact > .days {
+    text-align: start;
+}
+
+.divcontact > .rekvizit {
+    text-align: start;
+}
+
+.divcontact > .conect {
+    text-align: start;
+}
+
+.location {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    display: block;
+}
+
+iframe {
+    width:600px;
+    height:450px;
+    border: none;
+    border-radius: 15px;
+}

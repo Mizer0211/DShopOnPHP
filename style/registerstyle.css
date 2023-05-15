@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+* {
+  font-family: 'Nunito', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: #ffa723fa;
+  background-image: url(/foto/background/Monitor.png);
+  background-repeat: no-repeat;
+  background-size: 81%;
+  background-position-x: 102%;
+  background-position-y: 3%;
+  margin: 0;
+}
+
+.content {
+  position: fixed;
+  top: 17.5%;
+  left: 27%;
+}
+
+.register-div {
+  width: auto;
+  margin: auto;
+  color: #ffb649;
+  background: #0f1c3b;
+  text-align: center;
+  border: 1px solid #0f1c3b;
+  border-bottom: none;
+  border-radius: 10px 10px 0px 0px;
+}
+
+form, .content {
+  width: 45%;
+  margin: 0px auto;
+  padding: 20px;
+  border: 1px solid #0f1c3b;
+  background: #0f1c3b;
+  border-radius: 0px 0px 10px 10px;
+  height: 49.5%;
+}
+
+.input-group {
+  margin: 15px 0px 10px 0px;
+  text-align: center;
+  color: #fac473;
+}
+
+.input-group label {
+  display: block;
+  text-align: left;
+  margin: 3px;
+  text-align: unset;
+}
+
+.input-group input {
+  background-color: #fdd08b;
+  outline: 1px solid #ffa723fa;
+  height: 30px;
+  width: 85%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  filter: drop-shadow(0px 1px 2px black);
+}
+
+.input-group-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.signbtn {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.signbtn > p {
+  color: #fac473;
+}
+
+.signbtn > p > a {
+  text-decoration: underline;
+  color: #527fe9;
+  transition: 0.3s;
+}
+
+.signbtn > p > a:hover {
+  text-decoration: none;
+  color: #ffb649;
+}
+
+.btn {
+  padding: 10px;
+  font-size: 15px;
+  color: #0f1c3b;
+  background: #fdd08b;
+  border: 1px solid ;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #fac473;
+  border: 1px solid #527fe9;
+}
+
+.error {
+  width: 92%; 
+  margin: 0px auto; 
+  padding: 10px; 
+  border: 1px solid #a94442; 
+  color: #a94442; 
+  background: #f2dede; 
+  border-radius: 5px; 
+  text-align: left;
+}
+
+.success {
+  color: #3c763d; 
+  background: #dff0d8; 
+  border: 1px solid #3c763d;
+  margin-bottom: 20px;
+}
