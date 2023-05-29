@@ -6,9 +6,10 @@
 
 body {
     background: #fdd08b; /*#ffa723fa*/
-    /**background-image: url("foto/Background/test\ bg.jpg"); OR color #ff9900 **/
+    background-image: url(../foto/Background/Background.svg);
     background-position: center;
     background-size: auto;
+    background-repeat: no-repeat;
     margin: 0;
 }
 

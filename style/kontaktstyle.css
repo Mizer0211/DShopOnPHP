@@ -6,7 +6,7 @@
 
 body {
     background-color: #fdd08b;
-    background-image: url('/foto/Background/Background.svg');
+    background-image: url(../foto/Background/Background.svg);
     background-repeat: no-repeat;
     background-size: 100%;
     margin: 0;

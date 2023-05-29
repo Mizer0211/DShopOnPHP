@@ -3,7 +3,12 @@ session_start();
 
 // initializing variables
 $username = "";
-$email    = "";
+$email = "";
+$product_id = "product_id";
+$title = "title";
+$category = "category";
+$specification = "specification";
+$price = "price";
 $errors = array(); 
 
 // connect to the database
@@ -26,26 +31,26 @@ if (isset($_POST['reg_user'])) {
 	array_push($errors, "The two passwords do not match");
   }
 
-  // first check the database to make sure 
-  // a user does not already exist with the same username and/or email
+  // first check the database ?
+  // user does not already exist with the same username and/or email ?
   $user_check_query = "SELECT * FROM users WHERE user_name='$username' OR user_email='$email' LIMIT 1";
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
   
   if ($user) { // if user exists
-    if ($user['username'] === $username) {
+    if ($user['user_name'] === $username) {
       array_push($errors, "Username already exists");
     }
 
-    if ($user['email'] === $email) {
+    if (strtolower($user['user_email']) == $email) {
       array_push($errors, "email already exists");
     }
   }
 
-  // Finally, register user if there are no errors in the form
+  // Register user if no errors in the form
   if (count($errors) == 0) {
-  	$password = md5($password_1);//encrypt the password before saving in the database
-
+  	$password = md5($password_1);//Encrypt the password, saving in the database
+    $email =strtolower($email);
   	$query = "INSERT INTO users (user_name, user_email, password) 
   			  VALUES('$username', '$email', '$password')";
   	mysqli_query($db, $query);
@@ -80,5 +85,33 @@ if (isset($_POST['login_user'])) {
         }
     }
   }
+
+
+  //Add Product To Product Page
+  if (isset($_POST['add_product'])) {
+
+    $title = mysqli_real_escape_string($db, $_POST['title']);
+    $category = mysqli_real_escape_string($db, $_POST['category']);
+    $specification = mysqli_real_escape_string($db, $_POST['specification']);
+    $price = mysqli_real_escape_string($db, $_POST['price']);
   
-  ?>
+
+    if (empty($title)) { array_push($errors, "Title is required"); }
+    if (empty($category)) { array_push($errors, "Category is required"); }
+    if (empty($specification)) { array_push($errors, "Specification is required"); }
+    if (empty($price)) { array_push($errors, "Price is required"); }
+
+    if (count($errors) == 0) {
+      $category =strtolower($category);
+      $query = "INSERT INTO product (title, category, specification, price) 
+      VALUES('$title', '$category', '$specification', '$price')";
+      mysqli_query($db, $query);
+      $_SESSION['title'] = $title;
+      $_SESSION['category'] = $category;
+      $_SESSION['specification'] = $specification;
+      $_SESSION['price'] = $price;
+    }
+    header("Location: AddProduct.php");
+  }
+  
+?>

@@ -2,10 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="style/registerstyle.css">
+	<link rel="stylesheet" href="style/rregisterstyle.css">
 	<title>Registration</title>
 </head>
 <body>
+	<?php include('errors.php'); ?>
 	<div class="content">
 
 		<div class="register-div">
@@ -13,7 +14,7 @@
 		</div>
 
 		<form method="post" action="register.php">
-			<?php include('errors.php'); ?>
+			
 			<div class="input-group">
   			  <label>Username</label>
   			  <input type="text" name="username" value="<?php echo $username; ?>">

@@ -1,28 +1,35 @@
-<?php require "server.php";
-$db = $_POST;
-
-if(isset($db['forgot'])){
-	$username = R::findOne('users', 'email = ?', array($db['email']));
-	if($username){
-		$key = md5($username->login.rand(1000, 9999));
-		$username->change_key = $key;
-		R::store($username);
-
-		$url = $site_url.'newpass.php?key='.$key;
-		$message = $username->user_name.", был выполнен запрос на изминение пароля \n\n ДЛя прейди по ссылку ".$url."\n Esli eto bili ne vi, to sovetuem vam izmenit parol";
-
-		mail($db['email'], 'Podverdi dejstvie', $message);
-		header('location:/Profile.php');
-
-	}
-    else {
-		echo "Dannij email ne zaregan";
-	}
-
+<?php require_once 'server.php';
+ 
+if (isset($_REQUEST['doGo'])) {
+    if ($_REQUEST['email']) {
+        $email = $_REQUEST['email'];
+        $hash = md5($email . time());
+        $headers  = "MIME-Version: 1.0\r\n";
+        $headers .= "Content-type: text/html; charset=utf-8\r\n";
+        $headers .= "To: <$email>\r\n";
+        $headers .= "From: <mail@example.com>\r\n";
+        $message = '
+                <html>
+                <head>
+                <title>Подтвердите Email</title>
+                </head>
+                <body>
+                <p>Что бы восстановить пароль перейдите по <a href="http://example.com/newpass.php?hash=' . $hash . '">ссылка</a></p>
+                </body>
+                </html>
+                ';
+        mysqli_query($db, "UPDATE `users` SET hash='$hash' WHERE user_email='$email'");
+        if (mail($email, "Восстановление пароля через Email", $message, $headers)) {
+            echo 'Ссылка для восстановления пароля отправленная на вашу почту';
+        } else {
+            echo 'Произошла какая то ошибка, письмо отправилось';
+        }
+    } else {
+        echo "Вы не ввели Email"; 
+    }
 }
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,12 +40,10 @@ if(isset($db['forgot'])){
     <title>Forgot password</title>
 </head>
 <body>
-    <div>
-        <form action="/forgotpassword.php" method="post">
-            <h1>Zabili parol?</h1>
-            <input type="user_email" name="user_email" placeholder="Email"><br>
-            <button type="submit" name="forgot">Otprav pismo</button>
-        </form>
-    </div>
+    <form action="<?= $_SERVER['SCRIPT_NAME'] ?>" method="post">
+        <p>Введите ваш EMail: <input type="email" name="email"></p>
+        <p><input type="submit" value="Отправить" name="doGo"></p>
+    </form>
+
 </body>
 </html>

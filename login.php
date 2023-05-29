@@ -10,12 +10,13 @@
 	<link rel="stylesheet" href="style/loginstyle.css">
 </head>
 <body>
+	<?php include('errors.php'); ?>
 	<div class="content">
 		<div class="register-div">
 			<h2>Login</h2>
 		</div>
 		<form method="post" action="login.php">
-			<?php include('errors.php'); ?>
+			
 			<div class="input-group">
   				<label>Username</label>
   				<input type="text" name="username" >

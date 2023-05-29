@@ -66,7 +66,7 @@
                         </div>
                         <div class="user-info-text">
                             <p>Name : <?php echo $_SESSION['username']; ?></p>
-                            <p>Email : Sanjok60660@gmail.com </p>
+                            <p>Email : <?php echo $_SESSION['email'];?></p>
                             <div class="btnchoicer">
                                 <div class="changepasswordbtn">
                                     <button class="change-password" type="button">

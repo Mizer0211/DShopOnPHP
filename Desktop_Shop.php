@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style/style.css" rel="stylesheet" type="text/css"/>
     <link rel="icon" type="image/x-icon" href="/foto/icon/Icon.ico">
-    <title>Desctop Shop</title>
+    <title>Desktop Shop</title>
 </head>
 <body>
     <div class="content">

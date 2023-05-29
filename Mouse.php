@@ -75,7 +75,7 @@
         <div class="mouse">
             <div class="mouse-header">
                 <a href="Dart.php" class="mouselink"><span class="Name">HyperX Pulsefire Dart</span></a>
-                <a href="Dart.php"><img class="mouseimg" src="/foto/atb/MouseDart2.png"><a>
+                <a href="Dart.php"><img class="mouseimg" src=""><a>
             </div>
             <div class="mousedisc">
                 <ul>

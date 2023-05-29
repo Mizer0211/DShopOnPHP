@@ -9,7 +9,7 @@
 
 body {
   background: #ffa723fa;
-  background-image: url(/foto/background/Monitor_blue.svg);
+  background-image: url(../foto/background/Monitor_blue.svg);
   background-repeat: no-repeat;
   background-size: 81%;
   background-position-x: 102%;
@@ -19,7 +19,7 @@ body {
 
 .content {
   position: fixed;
-  top: 17.5%;
+  top: 17%;
   left: 27%;
 }
 
@@ -30,18 +30,17 @@ body {
   background: #0f1c3b;
   text-align: center;
   border: 1px solid #0f1c3b;
-  border-bottom: none;
-  border-radius: 10px 10px 10px 10px;
 }
 
 form, .content {
   width: 45%;
   margin: 0px auto;
-  padding: 20px;
+  padding: 25px;
+  padding-bottom: 30px;
   border: 1px solid #0f1c3b;
   background: #0f1c3b;
-  border-radius: 0px 0px 10px 10px;
-  height: 49.5%;
+  border-radius: 10px;
+  height: fit-content;
 }
 
 .input-group {
@@ -110,14 +109,14 @@ form, .content {
 }
 
 .error {
-  width: 92%; 
+  width: 20%; 
   margin: 0px auto; 
   padding: 10px; 
   border: 1px solid #a94442; 
   color: #a94442; 
   background: #f2dede; 
   border-radius: 5px; 
-  text-align: left;
+  text-align: center;
 }
 
 .success {
